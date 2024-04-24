@@ -1,9 +1,9 @@
-= modern-giops-stack-module-kube-prometheus-stack
+= modern-gitops-stack-module-kube-prometheus-stack
 // Document attributes to replace along the document
 :kube-prometheus-stack-chart-version: 58.0.1
 :chart-url: https://github.com/prometheus-community/helm-charts/blob/main/charts/kube-prometheus-stack
 
-A https://modern-giops-stack.io[Modern GitOps Stack] module to deploy and configure https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack[kube-prometheus-chart].
+A https://modern-gitops-stack.io[Modern GitOps Stack] module to deploy and configure https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack[kube-prometheus-chart].
 
 The kube-prometheus-stack chart used by this module is shipped in this repository as well, in order to avoid any unwanted behaviors caused by unsupported versions. 
 
