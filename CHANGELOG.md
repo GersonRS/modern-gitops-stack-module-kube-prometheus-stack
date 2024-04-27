@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/GersonRS/modern-gitops-stack-module-kube-prometheus-stack/compare/v1.1.0...v1.2.0) (2024-04-27)
+
+
+### Features
+
+* **docs:** update documentation ([4de199e](https://github.com/GersonRS/modern-gitops-stack-module-kube-prometheus-stack/commit/4de199e0d22a54f257d6235798d0522e1a82f298))
+
 ## [1.1.0](https://github.com/GersonRS/modern-gitops-stack-module-kube-prometheus-stack/compare/v1.0.0...v1.1.0) (2024-04-27)
 
 
