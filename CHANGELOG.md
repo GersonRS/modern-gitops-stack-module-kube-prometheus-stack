@@ -1,5 +1,23 @@
 # Changelog
 
+## [2.5.0](https://github.com/GersonRS/modern-gitops-stack-module-kube-prometheus-stack/compare/v2.4.0...v2.5.0) (2024-05-01)
+
+
+### 🚀 New Features
+
+* change chart update to include secrets ([263d31e](https://github.com/GersonRS/modern-gitops-stack-module-kube-prometheus-stack/commit/263d31e84e52f83fe45d0324f2881d2c73ff12f7))
+
+
+### 🔥 Bug Fixes
+
+* fix add-to-project workflow ([7ce84fc](https://github.com/GersonRS/modern-gitops-stack-module-kube-prometheus-stack/commit/7ce84fc81165f21c0bb3af194ff1b510df3c41e7))
+
+
+### 📚 Documentation
+
+* **terraform-docs:** generate docs and write to README.adoc ([cc3f9e7](https://github.com/GersonRS/modern-gitops-stack-module-kube-prometheus-stack/commit/cc3f9e779e707c9aa541d4b7d5e7277a631570e2))
+* **terraform-docs:** generate docs and write to README.adoc ([2960648](https://github.com/GersonRS/modern-gitops-stack-module-kube-prometheus-stack/commit/296064869bc338ae56e69969d9f78ffd65f4f135))
+
 ## [2.4.0](https://github.com/GersonRS/modern-gitops-stack-module-kube-prometheus-stack/compare/v2.3.0...v2.4.0) (2024-05-01)
 
 
