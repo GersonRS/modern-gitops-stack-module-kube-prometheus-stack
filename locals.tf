@@ -1,6 +1,6 @@
 locals {
   oauth2_proxy_image       = "quay.io/oauth2-proxy/oauth2-proxy:v7.6.0"
-  curl_wait_for_oidc_image = "curlimages/curl:8.6.0"
+  curl_wait_for_oidc_image = "quay.io/curl/curl:8.10.1"
   domain                   = trimprefix("${var.subdomain}.${var.base_domain}", ".")
   domain_full              = trimprefix("${var.subdomain}.${var.cluster_name}.${var.base_domain}", ".")
 
@@ -95,22 +95,28 @@ locals {
   alertmanager_template_files = length(local.alertmanager.slack_routes) > 0 ? {
     "slack.tmpl" = <<-EOT
       {{ define "slack.title" -}}
-        [{{ .Status | toUpper }}
-        {{ if eq .Status "firing" }}:{{ .Alerts.Firing | len }}{{- end -}}
-        ] {{ .CommonLabels.alertname }}
+        [{{ .Status | toUpper }}{{ if eq .Status "firing" }}:{{ .Alerts.Firing | len }}{{ end }}] {{ .CommonLabels.alertname }}
       {{ end }}
+
       {{ define "slack.text" -}}
-      {{ range .Alerts }}
-        *Alert:* {{ .Annotations.summary }} - `{{ .Labels.severity }}`
-        {{- if .Annotations.description }}
+        {{ with index .Alerts 0 -}}
+          :chart_with_upwards_trend: *<{{ .GeneratorURL }}|Source Graph>*
+        {{ end }}
+        {{- range .Alerts -}}
         *Severity:* `{{ .Labels.severity }}`
+        {{- if .Annotations.summary }}
+        *Alert:* {{ .Annotations.summary }}
+        {{- end }}
+        {{- if .Annotations.description }}
         *Description:* {{ .Annotations.description }}
         {{- end }}
-        *Graph:* <{{ .GeneratorURL }}|:chart_with_upwards_trend:>
+        {{- if .Annotations.runbook_url }}
+        *Runbook URL:* <{{ .Annotations.runbook_url }}|Click here>
+        {{- end }}
         *Labels:*
-          {{ range .Labels.SortedPairs }} - *{{ .Name }}:* `{{ .Value }}`
+          {{ range .Labels.SortedPairs }} • *{{ .Name }}:* `{{ .Value }}`
           {{ end }}
-      {{ end }}
+        {{ end }}
       {{ end }}
     EOT
   } : {}
