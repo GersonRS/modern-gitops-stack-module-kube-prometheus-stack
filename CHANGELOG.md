@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.6.1](https://github.com/GersonRS/modern-gitops-stack-module-kube-prometheus-stack/compare/v2.6.0...v2.6.1) (2025-02-08)
+
+
+### ⌨️ Code Refactoring
+
+* adjust workflows ([e57e2d4](https://github.com/GersonRS/modern-gitops-stack-module-kube-prometheus-stack/commit/e57e2d4beac0c8db379a232cdd7a3d2ccad5a670))
+* try adjust code 5 ([0681956](https://github.com/GersonRS/modern-gitops-stack-module-kube-prometheus-stack/commit/068195685f2493c10222463436af9637833f6bf1))
+
 ## [2.6.0](https://github.com/GersonRS/modern-gitops-stack-module-kube-prometheus-stack/compare/v2.5.0...v2.6.0) (2025-01-18)
 
 
